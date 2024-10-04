@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main_container">
+      <!-- Scores Tally -->
+      <div class="top_section">
+        <div class="top_header">
+          <p>ROCK PAPER SCISSOR</p>
+        </div>
+        <div class="score">
+          <div class="current">
+            <p class="name" id="name--0">COMPUTER SCORE</p>
+            <p class="current_score" id="current--0">0</p>
+          </div>
+          <div class="current">
+            <p class="name" id="name--1">YOUR SCORE</p>
+            <p class="current_score" id="current--1">0</p>
+          </div>
+        </div>
+      </div>
+      <!-- Main Section -->
+      <div class="outer_container">
+        <div class="container">
+          <div class="circle" id="circle1" onclick="pickUserHand('paper')">
+            <img src="./Paper.png" alt="Fist Icon" />
+          </div>
+          <div class="circle" id="circle2" onclick="pickUserHand('rock')">
+            <img src="./Rock.png" alt="Peace Icon" />
+          </div>
+          <div class="circle" id="circle3" onclick="pickUserHand('scissor')">
+            <img src="./Scissor.png" alt="Hand Icon" />
+          </div>
+          <div class="line" id="line1"></div>
+          <div class="line" id="line2"></div>
+          <div class="line" id="line3"></div>
+        </div>
+      </div>
+
+      <!-- Hidden Rule -->
+      <div class="rules hidden">
+        <div onclick="closeRules()" class="cross">
+          <p>X</p>
+        </div>
+        <h2 style="text-align: center">Games Rules</h2>
+        <ul>
+          <li>
+            Rock beats scissors, scissors beat paper, and paper beats rock.
+          </li>
+          <li>
+            Agree ahead of time whether you’ll count off “rock, paper, scissors,
+            shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            Use rock, paper, scissors to settle minor decisions or simply play
+            to pass the time
+          </li>
+          <li>
+            If both players lay down the same hand, each player lays down
+            another hand
+          </li>
+        </ul>
+      </div>
+
+      <!-- Result box -->
+      <div class="result_container hidden">
+        <div class="result">
+          <div class="userPicked">
+            <p>You Picked</p>
+            <div class="outer_circle1 outer_circle">
+              <div class="new_circle" id="" value="1">
+                <img id="userPickImage" src="./Paper.png" alt="Fist Icon" />
+              </div>
+            </div>
+          </div>
+          <div class="res_state">
+            <h2 class="decision">
+              YOU WIN<br /><span style="font-size: 20px">AGAINST PC</span>
+            </h2>
+            <button class="play_btn" onclick="playagain()">Play Again</button>
+          </div>
+          <div class="pcPicked">
+            <p>PC Picked</p>
+            <div class="outer_circle">
+              <div class="new_circle" id="circl" value="1">
+                <img id="computerPickImage" src="./Rock.png" alt="Fist Icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Victory Page -->
+      <div class="victory-container hidden">
+        <div class="star">
+          <img src="./Victory.png" alt="Trophy" class="trophy-image" />
+        </div>
+        <h1>HURRAY!!</h1>
+        <p>YOU WON THE GAME</p>
+        <button class="play_btn" onclick="playagain()">Play Again</button>
+      </div>
+      <!-- Buttons -->
+      <div class="button">
+        <button class="btn" onclick="openrules()">RULES</button>
+        <button class="btn hidden" id="nextbtn" onclick="openNext()">
+          Next
+        </button>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script src="./script.js"></script>
+  </body>
+</html>
